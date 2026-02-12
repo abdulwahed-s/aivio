@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import 'package:aivio/core/constant/color.dart';
+
+class LoginPasswordField extends StatelessWidget {
+  final TextEditingController controller;
+  final bool obscurePassword;
+  final bool enabled;
+  final VoidCallback onToggleVisibility;
+
+  const LoginPasswordField({
+    super.key,
+    required this.controller,
+    required this.obscurePassword,
+    required this.enabled,
+    required this.onToggleVisibility,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: 'Password',
+        prefixIcon: const Icon(
+          Icons.lock_outlined,
+          color: Appcolor.primaryColor,
+        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: isDark ? Colors.grey.shade700 : Colors.grey.shade300,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Appcolor.primaryColor, width: 2),
+        ),
+        filled: true,
+        fillColor: isDark ? Colors.grey.shade900 : Colors.grey.shade50,
+        suffixIcon: IconButton(
+          icon: Icon(
+            obscurePassword
+                ? Icons.visibility_outlined
+                : Icons.visibility_off_outlined,
+            color: Colors.grey.shade600,
+          ),
+          onPressed: onToggleVisibility,
+        ),
+      ),
+      obscureText: obscurePassword,
+      enabled: enabled,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter your password';
+        }
+        if (value.length < 6) {
+          return 'Password must be at least 6 characters';
+        }
+        return null;
+      },
+    );
+  }
+}
