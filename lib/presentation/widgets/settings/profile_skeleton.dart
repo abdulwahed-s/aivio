@@ -1,4 +1,4 @@
-import 'package:aivio/presentation/widgets/skeleton_container.dart';
+import 'package:aivio/presentation/widgets/settings/skeleton_container.dart';
 import 'package:flutter/material.dart';
 
 class SettingsProfileSkeleton extends StatelessWidget {
