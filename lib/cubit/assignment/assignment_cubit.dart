@@ -1,3 +1,4 @@
+import 'package:aivio/core/constant/api_keys.dart';
 import 'package:aivio/core/services/gemini_service.dart';
 import 'package:aivio/core/services/document_services.dart';
 import 'package:aivio/core/services/assignment_firestore_service.dart';
@@ -15,9 +16,7 @@ class AssignmentCubit extends Cubit<AssignmentState> {
   AssignmentCubit() : super(AssignmentInitial());
 
   final DocumentService _documentService = DocumentService();
-  final GeminiService _geminiService = GeminiService(
-    "AIzaSyA-_6E4NQMS5MyoISA0-kkSkrKNSHAJzCo",
-  );
+  final GeminiService _geminiService = GeminiService(ApiKeys.geminiApiKey);
   final AssignmentFirestoreService _firestoreService =
       AssignmentFirestoreService();
 

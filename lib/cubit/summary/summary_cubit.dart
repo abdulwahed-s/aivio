@@ -1,3 +1,4 @@
+import 'package:aivio/core/constant/api_keys.dart';
 import 'package:aivio/core/services/gemini_service.dart';
 import 'package:aivio/core/services/document_services.dart';
 import 'package:aivio/core/services/summary_firestore_service.dart';
@@ -15,9 +16,7 @@ class SummaryCubit extends Cubit<SummaryState> {
   SummaryCubit() : super(SummaryInitial());
 
   final DocumentService _pdfService = DocumentService();
-  final GeminiService _geminiService = GeminiService(
-    "AIzaSyA-_6E4NQMS5MyoISA0-kkSkrKNSHAJzCo",
-  );
+  final GeminiService _geminiService = GeminiService(ApiKeys.geminiApiKey);
   final SummaryFirestoreService _firestoreService = SummaryFirestoreService();
 
   void setUserId(String userId) {

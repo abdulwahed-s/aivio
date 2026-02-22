@@ -1,3 +1,4 @@
+import 'package:aivio/core/constant/api_keys.dart';
 import 'package:aivio/core/services/gemini_service.dart';
 import 'package:aivio/core/services/document_services.dart';
 import 'package:aivio/core/services/quiz_firestore_service.dart';
@@ -16,9 +17,7 @@ class QuizCubit extends Cubit<QuizState> {
   QuizCubit() : super(QuizInitial());
 
   final DocumentService _pdfService = DocumentService();
-  final GeminiService _geminiService = GeminiService(
-    "AIzaSyA-_6E4NQMS5MyoISA0-kkSkrKNSHAJzCo",
-  );
+  final GeminiService _geminiService = GeminiService(ApiKeys.geminiApiKey);
   final QuizFirestoreService _firestoreService = QuizFirestoreService();
 
   void setUserId(String userId) {
