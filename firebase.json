@@ -1,0 +1,55 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "aivio-baa1e",
+          "appId": "1:197537670071:android:e3e7ce7cd7deaeb797fe32",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "aivio-baa1e",
+          "appId": "1:197537670071:ios:a76f7ec96165b43897fe32",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "aivio-baa1e",
+          "appId": "1:197537670071:ios:a76f7ec96165b43897fe32",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "aivio-baa1e",
+          "configurations": {
+            "android": "1:197537670071:android:e3e7ce7cd7deaeb797fe32",
+            "ios": "1:197537670071:ios:a76f7ec96165b43897fe32",
+            "macos": "1:197537670071:ios:a76f7ec96165b43897fe32",
+            "web": "1:197537670071:web:d4f4b6d5b38f220897fe32",
+            "windows": "1:197537670071:web:3941deb65e89f67497fe32"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
